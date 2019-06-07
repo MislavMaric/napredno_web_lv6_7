@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+	h1.
+		Blob ID #{blob._id}
+	form(action='/blobs/#{blob._id}/edit',method='post',name='updateblob',enctype='application/x-www-form-urlencoded')
+		p Naziv projekta:
+			input#inputName(type='text', value='#{blob.nazivProjekta}', name='nazivProjekta')
+		p Opis projekta:
+			input#inputBadge(type='text', value='#{blob.opisProjekta}', name='opisProjekta')
+		p Obavljeni poslovi:
+			input#inputBadge(type='text', value='#{blob.obavljeniPoslovi}', name='obavljeniPoslovi')
+		p Cijena projekta:
+			input#inputBadge(type='text', value='#{blob.cijenaProjekta}', name='cijenaProjekta')
+		p Datum početka:
+			input#inputBadge(type='text', value='#{blob.datumPocetka}', name='datumPocetka')
+		p Datum završetka:
+			input#inputBadge(type='text', value='#{blob.datumZavrsetka}', name='datumZavrsetka')
+		p
+			input(type='hidden',value='PUT',name='_method')
+		p
+			button#btnSubmit(type='submit').
+				Update

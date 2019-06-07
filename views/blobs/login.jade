@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+
+    h1.
+         #{title}
+
+    form#formLogin(name="register",method="post",action="/login")
+    p E-mail:
+      input#inputBadge(type="text", name="email")
+    p Lozinka:
+      input#inputBadge(type="password", name="password")
+    p
+      input#inputDob(type="hidden", name="dob")
+    p
+      button#btnSubmit(type="submit") Prijavi se

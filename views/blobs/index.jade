@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+
+    h1.
+         #{title}
+    p
+      a(href='blobs/new') Dodaj projekt
+
+    ul
+        - each blob, i in blobs
+            li
+                = blob.nazivProjekta
+
+                form(action='/blobs/#{blob._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
+                    input(type='hidden',value='DELETE',name='_method')
+                    button(type='submit').
+                        Obriši
+                p
+                    a(href='/blobs/#{blob._id}/edit') Uredi
+                p
+                    a(href='/blobs/#{blob._id}') Prikaži

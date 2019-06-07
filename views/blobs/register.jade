@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+
+    h1.
+         #{title}
+    p
+      Register
+
+    form#formRegister(name="register",method="post",action="/register")
+    p Ime:
+      input#inputName(type="text", name="firstName")
+    p Prezime:
+      input#inputBadge(type="text", name="lastName")
+    p E-mail:
+      input#inputBadge(type="text", name="email")
+    p Lozinka:
+      input#inputBadge(type="password", name="password")
+    p
+      input#inputDob(type="hidden", name="dob")
+    p
+      button#btnSubmit(type="submit") Registriraj se
